@@ -1,9 +1,15 @@
 const fs = require('node:fs');
 const path = require('node:path');
+
+const deploydb= require('./db.js');
+
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+
+
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
